@@ -21,6 +21,8 @@ token = util.prompt_for_user_token(username, scope, CLIENT_ID, CLIENT_SECRET, RE
 tracks = []
 if token:
     spo = spotipy.Spotify(auth=token)
+    # the user_playlist_tracks function gets two parametrs: 'user' and 'playlist'
+    # which can be extracted from the playlist uri
     results = spo.user_playlist_tracks('bnotmjg1ue4zu2d06ovib5sd6', '4ybqmPofUM18af8BtinhV9')
 
     for item in results['items']:
