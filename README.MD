@@ -36,7 +36,7 @@ Set the necessary environment variables:
 
     export SPOTIFY_CLIENT_ID='your-client-id'
     export SPOTIFY_CLIENT_SECRET='your-client-secret'
-    export SPOTIFY_REDIRECT_URL='redirecret-url'
+    export SPOTIFY_REDIRECT_URL='spotify-app-redirect-url'
     export YOUTUBE_API_SECRET='your-youtube-api'
 
 in `spotifyapi.py` file find the following line:
