@@ -1,0 +1,17 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+requests = "*"
+spotipy = "*"
+youtube-dl = "*"
+google-api-python-client = "*"
+eyed3 = {extras = ["display-plugin"],version = "*"}
+python-magic-bin = "*"
+
+[requires]
+python_version = "3.7"
