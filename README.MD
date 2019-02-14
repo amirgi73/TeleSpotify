@@ -22,22 +22,23 @@ TeleSpotify is a project aiming to create a Telegram bot which parses the spotif
 First install python3 for your OS.
 Then install pipenv using:
 
-    pip3 install pipenv --user
+    $ pip3 install pipenv --user
 Clone the repository using git:
 
-    git clone https://github.com/amirgi73/TeleSpotify.git
+    $ git clone https://github.com/amirgi73/TeleSpotify.git
 
 Now you can install all dependencies using pipenv:
 
-    pipenv install
+    $ cd TeleSpotify
+    $ pipenv install
 
 ## Making the necessary changes:
 Set the necessary environment variables:
 
-    export SPOTIFY_CLIENT_ID='your-client-id'
-    export SPOTIFY_CLIENT_SECRET='your-client-secret'
-    export SPOTIFY_REDIRECT_URL='spotify-app-redirect-url'
-    export YOUTUBE_API_SECRET='your-youtube-api'
+    $ export SPOTIFY_CLIENT_ID='your-client-id'
+    $ export SPOTIFY_CLIENT_SECRET='your-client-secret'
+    $ export SPOTIFY_REDIRECT_URL='spotify-app-redirect-url'
+    $ export YOUTUBE_API_SECRET='your-youtube-api'
 
 Open `spotifyapi.py` in your text editor and find the following line:
 
@@ -48,8 +49,8 @@ Open `spotifyapi.py` in your text editor and find the following line:
 
 Now you can run the `spotifyapi.py` file which downloads your playlist tracks and saves them to the `Downloads` directory. Replace the `spotify-user-name` with **username** of the account which you want to download the playlist from:
 
-    python3 spotifyapi.py spotify-user-name
-The script will run and opens a browser window. Here you should log in to our spotify account and give the permission to the app so it can read your playlist. After granting the permission, your browser shows an error saying *the page you requested was not found*. **Please note that this is an expected behavior.** 
+    $ python3 spotifyapi.py spotify-user-name
+The script will run and opens a browser window. Here you should log in to your spotify account and give the permission to the app so it can read your playlist. After granting the permission, your browser shows an error saying *the page you requested was not found*. **Please note that this is an expected behavior.** 
  **copy the url** of the page which is showing you the error and paste it in your terminal where the script prompts it.
 
 ## Setting log level
