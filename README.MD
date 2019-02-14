@@ -39,6 +39,8 @@ Set the necessary environment variables:
     $ export SPOTIFY_CLIENT_SECRET='your-client-secret'
     $ export SPOTIFY_REDIRECT_URL='spotify-app-redirect-url'
     $ export YOUTUBE_API_SECRET='your-youtube-api'
+    
+Get your credentials at https://developer.spotify.com/my-applications
 
 Open `spotifyapi.py` in your text editor and find the following line:
 
