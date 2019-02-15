@@ -12,6 +12,7 @@ youtube-dl = "*"
 google-api-python-client = "*"
 eyed3 = {extras = ["display-plugin"],version = "*"}
 python-magic-bin = "*"
+python-telegram-bot = "*"
 
 [requires]
 python_version = "3.7"

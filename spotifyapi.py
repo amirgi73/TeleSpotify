@@ -8,11 +8,6 @@ import eyed3
 import requests
 
 logger = Logger('spotifyapi')
-if len(sys.argv) > 2:
-    username = sys.argv[1]
-else:
-    print(f"Usage: {sys.argv[0]} username playlist-uri")
-    sys.exit()
 
 
 def playlist_uri_parser(uri):
@@ -30,9 +25,19 @@ scope = 'user-library-read playlist-read-private'
 CLIENT_ID = os.environ.get('SPOTIFY_CLIENT_ID')
 CLIENT_SECRET = os.environ.get('SPOTIFY_CLIENT_SECRET')
 REDIRECT_URL = os.environ.get('SPOTIFY_REDIRECT_URL')
-SPOTIFY_PLAYLIST_USER, SPOTIFY_PLAYLIST = playlist_uri_parser(sys.argv[2])
 
-playlist_user, playlist = playlist_uri_parser(sys.argv[2])
+if __name__ == '__main__':
+    if len(sys.argv) > 2:
+        username = sys.argv[1]
+        playlist_user, playlist = playlist_uri_parser(sys.argv[2])
+        SPOTIFY_PLAYLIST_USER, SPOTIFY_PLAYLIST = playlist_uri_parser(sys.argv[2])
+    else:
+        print(f"Usage: {sys.argv[0]} username playlist-uri")
+        sys.exit()
+else:
+    username = "abcklm@protonmail.com"
+    SPOTIFY_PLAYLIST_USER, SPOTIFY_PLAYLIST = playlist_uri_parser(
+        'spotify:user:bnotmjg1ue4zu2d06ovib5sd6:playlist:4ybqmPofUM18af8BtinhV9')
 token = util.prompt_for_user_token(username, scope, CLIENT_ID, CLIENT_SECRET, REDIRECT_URL)
 tracks = []
 if token:
@@ -52,7 +57,8 @@ else:
     print(f"can't get token for {username}")
     logger.error(f"can't get token for {username}")
 
-if __name__ == "__main__":
+
+def main():
     for track in tracks:
         title = track['name']
         artists = track['artists']
